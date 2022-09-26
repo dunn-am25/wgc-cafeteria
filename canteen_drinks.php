@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drinks - Wellington Girls' College Canteen</title>
+    <meta name="description" content="WGC Home Page Layout">
+    <link href="canteen_style.css" rel="stylesheet" type="text/css">
+    <style>
+        .item1 { grid-area: product1; }
+        .item2 { grid-area: product2; }
+        .item3 { grid-area: product3; }
+        .item4 { grid-area: product4; }
+        .item5 { grid-area: product5; }
+        .item6 { grid-area: product6; }
+
+        .product-display {
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-template-areas:
+                            'product1 product2 product3'
+                            'product4 product5 product6';
+            background-color: #f0f5f6ff;
+            font-family: 'Source Sans Pro';
+            font-size: 30px;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .product-display > div {
+            background-color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="grid-container">
+    <div class="grid-item header">
+        <img src="https://wgc.school.nz/wp-content/uploads/2018/09/WGC_Logo_Transparent_RGB.png"
+             width="53%" height="70%"
+             alt="The logo of the school."> <p> <b> WGC Canteen </b> </p>
+    </div>
+    <div class="grid-item navigation-1">
+        <p> <a href="http://dtweb.wgc.school.nz/dunnam/school_canteen/canteen_page_1.html">HOME</a>
+        </p>
+    </div>
+    <div class="grid-item navigation-2">
+        <p> <a href="http://dtweb.wgc.school.nz/dunnam/school_canteen/canteen_foods.php">FOOD MENU</a>
+        </p>
+    </div>
+    <div class="grid-item navigation-3">
+        <p> <a href="http://dtweb.wgc.school.nz/dunnam/school_canteen/canteen_drinks.php">DRINK MENU</a>
+        </p>
+    </div>
+    <div class="grid-item special-display">
+        <p> <b> OUR DRINKS MENU FOR 2022 </b> <br>
+            The daily special (with a discount) is indicated by a gold star. </p>
+    </div>
+    <div class="product-display">
+        <div class="item1">Product1</div>
+        <div class="item2">Product2</div>
+        <div class="item3">Product3</div>
+        <div class="item4">Product4</div>
+        <div class="item5">Product5</div>
+        <div class="item6">Product6</div>
+    </div>
+
+
+
+</body>
+</html>
