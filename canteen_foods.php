@@ -13,8 +13,8 @@ if($dbcon == NULL) {
 /* Food query for the Ham Panini */
 $food1_query = "SELECT food_id, food, cost, stock, allergens, vegetarian, vegan, weekday
                     FROM foods, food_specials
-                    WHERE foods.food_id = food_specials.special_id
-                    AND food = 'Ham Panini';";
+                    WHERE foods.food_id = food_specials.special_id";
+
 
 /* Queries the database */
 $food_result = mysqli_query($dbcon, $food1_query);
@@ -111,7 +111,16 @@ if($food_rows > 0) {
 
             ?>
         </div>
-        <div class="item2">Product2</div>
+        <div class="item2">
+            <?php
+            while($food_record = mysqli_fetch_assoc($food_result)){
+                echo "Food: <em>". $food_record['food'] ."</em><br>";
+                echo "Cost: <em>" . $food_record['cost'] ."</em><br>";
+                echo "Special: <em>". $food_record['weekday'] ."</em></p>";
+            }
+
+            ?>
+        </div>
         <div class="item3">Product3</div>
         <div class="item4">Product4</div>
         <div class="item5">Product5</div>
