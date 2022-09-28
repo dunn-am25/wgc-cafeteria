@@ -10,14 +10,14 @@ if($dbcon == NULL) {
     exit();
 }
 
-/* Food query for the Ham Panini */
-$food1_query = "SELECT food_id, food, cost, stock, allergens, vegetarian, vegan, weekday
+/* Food query for all foods */
+$food_query = "SELECT food_id, food, cost, stock, allergens, vegetarian, vegan, weekday
                     FROM foods, food_specials
                     WHERE foods.food_id = food_specials.special_id";
 
 
 /* Queries the database */
-$food_result = mysqli_query($dbcon, $food1_query);
+$food_result = mysqli_query($dbcon, $food_query);
 
 /* Counts the results */
 $food_rows = mysqli_num_rows($food_result);
@@ -25,8 +25,21 @@ $food_rows = mysqli_num_rows($food_result);
 /* Forms an associative array */
 $food_record = mysqli_fetch_assoc($food_result);
 
-if($food_rows > 0) {
-    echo "There were ".$food_rows." results returned.";
+/* Runs the result */
+$food_query_run = mysqli_query($dbcon, $food_query);
+
+if($food_rows > 0)
+{    foreach($food_query_run as $food_list)
+    {
+    // echo $food_list['food'];
+        ?>
+            <div>
+                <input type="checkbox" name="food[]" value="<?= $food_list['food_id']; ?>">
+                <?= $food_list ['weekday']; ?>
+            </div>
+        <?php
+    }
+
 } else {
     echo "No results found.";
 }
@@ -95,31 +108,32 @@ if($food_rows > 0) {
             The daily special (with a discount) is indicated by a gold star. </p>
         <form name="foods_form" id="foods_form" method = "get" action ='canteen.php'>
             <select id = 'food' name = 'food'>
+                <!--options-->
+                <?php
+                while($food_record = mysqli_fetch_assoc($food_result)){
+                    echo "<option value = '".$food_record['food_id'] . "'>";
+                    echo $food_record['food'];
+                    echo "</option>";
+                }
 
+                ?>
             </select>
-            <input type="submit" name ='foods_button' value ='Show me the food info'>
+            <input type="submit" name="food_button" value="Show food information."
         </form>
     </div>
     <div class="product-display">
         <div class="item1">
             <?php
-
-            echo "<h3> Order Number: <em>". $food_record['food_id'] ."</em></h3><br>";
-            echo "Food: <em>". $food_record['food'] ."</em><br>";
-            echo "Cost: <em>" . $food_record['cost'] ."</em><br>";
-            echo "Special: <em>". $food_record['weekday'] ."</em></p>";
+            while($food_record = mysqli_fetch_assoc($food_result)){
+                echo "<em>". $food_record['food'] ."</em><br>";
+                echo "$<em>" . $food_record['cost'] ."</em><br>";
+                echo "Allergy Warnings: <em>" . $food_record['allergens'] ."</em><br>";
+                echo "Discount on <em>". $food_record['weekday'] ."</em></p>";
+            }
 
             ?>
         </div>
         <div class="item2">
-            <?php
-            while($food_record = mysqli_fetch_assoc($food_result)){
-                echo "Food: <em>". $food_record['food'] ."</em><br>";
-                echo "Cost: <em>" . $food_record['cost'] ."</em><br>";
-                echo "Special: <em>". $food_record['weekday'] ."</em></p>";
-            }
-
-            ?>
         </div>
         <div class="item3">Product3</div>
         <div class="item4">Product4</div>
