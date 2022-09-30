@@ -42,7 +42,6 @@ $this_drink_record = mysqli_fetch_assoc($this_drink_result);
     <style>
         <?php include "canteen_style.css" ?>
         .item1 { grid-area: product1; }
-
         .product-display {
             display: grid;
             grid-column-start: 1;
@@ -72,7 +71,7 @@ $this_drink_record = mysqli_fetch_assoc($this_drink_result);
     <div class="grid-item header">
         <a href="http://dtweb.wgc.school.nz/dunnam/school_canteen/canteen_home.php">
             <img src="https://wgc.school.nz/wp-content/uploads/2018/09/WGC_Logo_Transparent_RGB.png"
-                 width="53%" height="70%"
+                 width="53" height="70"
                  alt="The logo of the school.">
         </a>
         <p> <b> WGC Canteen </b> </p>
@@ -139,18 +138,22 @@ $this_drink_record = mysqli_fetch_assoc($this_drink_result);
 <div class="product-display">
     <div class="item1">
         <?php
-        echo "<b> COMPLETE DRINK MENU </b><br><br>";
+        echo "<b> COMPLETE DRINK MENU <br><br>";
         while ($drink_record = mysqli_fetch_assoc($this_drink_result)) {
             echo "<em><b>" . $drink_record['drink'] . "</b></em><br>";
             echo "$<em>" . $drink_record['cost'] . "</em><br>";
             echo "Vegetarian: <em>" . $drink_record['vegetarian'] . "</em><br>";
             echo "Vegan: <em>" . $drink_record['vegan'] . "</em><br>";
             echo "Allergy Warnings: <em>" . $drink_record['allergens'] . "</em><br>";
-            echo "Discount on <em>" . $drink_record['weekday'] . "</em></p>";
+            echo "Discount on <em>" . $drink_record['weekday'] . "</em>";
+            echo "In stock: <b>" . $drink_record['stock'] . "</b>";
             echo "--:::------::------------------->◇<--------------------::------:::--- <br><br>";
         }
         ?>
     </div>
+</div>
+<div class="grid-item special-display">
+    <br> <p> © Copyright Wellington Girls' College (logo), 2022.
 </div>
 
 
