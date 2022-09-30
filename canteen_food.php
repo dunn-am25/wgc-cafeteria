@@ -42,7 +42,6 @@
         <style>
             <?php include "canteen_style.css" ?>
             .item1 { grid-area: product1; }
-
             .product-display {
                 display: grid;
                 grid-column-start: 1;
@@ -72,7 +71,7 @@
         <div class="grid-item header">
             <a href="http://dtweb.wgc.school.nz/dunnam/school_canteen/canteen_home.php">
             <img src="https://wgc.school.nz/wp-content/uploads/2018/09/WGC_Logo_Transparent_RGB.png"
-                 width="53%" height="70%"
+                 width="53" height="70"
                  alt="The logo of the school.">
             </a>
             <p> <b> WGC Canteen </b> </p>
@@ -139,18 +138,22 @@
     <div class="product-display">
     <div class="item1">
     <?php
-        echo "<b> COMPLETE FOOD MENU </b><br><br>";
+        echo "<b> COMPLETE FOOD MENU <br><br>";
        while ($food_record = mysqli_fetch_assoc($this_food_result)) {
            echo "<em><b>" . $food_record['food'] . "</b></em><br>";
            echo "$<em>" . $food_record['cost'] . "</em><br>";
            echo "Vegetarian: <em>" . $food_record['vegetarian'] . "</em><br>";
            echo "Vegan: <em>" . $food_record['vegan'] . "</em><br>";
            echo "Allergy Warnings: <em>" . $food_record['allergens'] . "</em><br>";
-           echo "Discount on <em>" . $food_record['weekday'] . "</em></p>";
-           echo "--:::------::------------------->◇<--------------------::------:::--- <br><br>";
+           echo "Discount on <em>" . $food_record['weekday'] . "</em>";
+           echo "In stock: <b>" . $food_record['stock'] . "</b>";
+           echo "<p> --:::------::------------------->◇<--------------------::------:::--- <br><br>";
     }
     ?>
     </div>
+    </div>
+    <div class="grid-item special-display">
+        <br> <p> © Copyright Wellington Girls' College (logo), 2022.
     </div>
 
 
