@@ -1,4 +1,4 @@
-       <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
         <head>
             <!-- Heading, beginning information, link to stylesheet -->
@@ -18,7 +18,7 @@
                  <div class="grid-item header">
                      <a href="http://dtweb.wgc.school.nz/dunnam/school_canteen/canteen_home.php">
                          <img src="https://wgc.school.nz/wp-content/uploads/2018/09/WGC_Logo_Transparent_RGB.png"
-                              width="53%" height="70%"
+                              width="53" height="70"
                               alt="The logo of the school.">
                      </a>
                      <p> <b> WGC Canteen </b> </p>
@@ -70,6 +70,9 @@
                      <br> Check out the food and drinks menus on this website
                           to see what we offer and what our prices are. </p>
                  </div>
+                 </div>
+                 <div class="grid-item special-display">
+                     <br> <p> © Copyright Wellington Girls' College (logo), 2022.
                  </div>
             </div>
     </body>
