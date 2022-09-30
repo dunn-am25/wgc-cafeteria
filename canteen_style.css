@@ -1,0 +1,140 @@
+/* CSS Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Source+Sans+Pro:wght@400&display=swap');
+
+body {
+    background-color: #d0e0e3ff;
+    align-items: center;
+}
+
+
+.grid-container {
+    width: 960px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 55px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.navigation-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #45818eff;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+.navigation-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: #45818eff;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+.navigation-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: #45818eff;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+
+.special-display {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #f0f5f6ff;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 15px;
+    color: #76a5afff;
+}
+
+
+.openhours-display {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #76a5afff;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 25px;
+    color: #d0e0e3ff;
+}
+
+
+.location-display {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #f0f5f6ff;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 25px;
+    color: #76a5afff;
+    padding: 7px 10px 7px;
+}
+
+
+.offer-display {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #76a5afff;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 25px;
+    color: #d0e0e3ff;
+}
+
+
+a:link {
+    color: #d0e0e3ff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #d0e0e3ff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.search-display {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: white;
+    font-size: 25px;
+    align-content: center;
+    background-color: #f0f5f6ff;
+    color: black;
+    font-family: 'Source Sans Pro';
+}
